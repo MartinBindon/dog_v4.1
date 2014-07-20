@@ -210,7 +210,9 @@
               <label for="textinput1">
                   Name of pet
               </label>
-              <input name="" id="textinput1" placeholder="" value="" type="text">
+
+              <!-- when the text input has changed and focus moves away from it we update the local storage entry for this field. -->
+              <input onchange="addPetName(this)" name="addPetName" id="textinput1" placeholder="" value="" type="text">
           </div>
 
 
@@ -689,10 +691,16 @@
 
                 <section id="pet_age">
                   Age:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
                 <section id="pet_weight">
                   Weight:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
               </article>
@@ -707,28 +715,46 @@
 
                 <section id="vet_name">
                   Registered Vet:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
                 <section id="vet_number">
                   Phone number:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
                 <section id="vet_oohcontact">
                   Out of hours contact:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
                 </br>
 
                 <section id="tmt_flea">
                   Flea treatment due:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
                 <section id="tmt_worm">
                   Worming treatment due:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
                 <section id="tmt_jab">
                   Innoculations due:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
               </article>
@@ -743,14 +769,23 @@
 
                 <section id="ins_name">
                   Name:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
                 <section id="ins_policyNo">
                   Policy number:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
                 <section id="ins_contact">
                   Contact number:
+                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                    Lurcher
+                  </div>
                 </section>
 
               </article>
