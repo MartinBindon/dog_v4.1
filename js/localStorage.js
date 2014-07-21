@@ -11,6 +11,10 @@
 
 
 
+// +++++++++++++++   This function collects data from the text +++++++++++++++
+// +++++++++++++++   entry when adding a new pet and save it locally +++++++++
+
+//  THIS WONT BE NECESSARY IF createPet() is used.
 
 function addPetName(val) 
     {
@@ -18,7 +22,8 @@ function addPetName(val)
         localStorage.setItem("pet_name", newPetName);
     }
 
-
+// +++++++++++++++   This function deletes a pet from localStorage - +++++++++++++++
+// !!!!!!!!   it will need to be changed to reflect key pair values !!!!!!!!
 function clearPet() 
 	{
 		localStorage.removeItem("pet_name");
@@ -34,9 +39,13 @@ function clearPet()
 		localStorage.removeItem("ins_contact");
 	}
 
+
+// ++++++++++++++ A way of collecting data for a specific pet.  ++++++++++++++++++
+// !!!!!! Need to pull the infor from tbPets array !!!!!!!
 function getPet() 
 	{
 		console.log("getPet called.");
+
 	}
 
 // Adds a pet to the JSON array, creates array if no array exists (first time it is clicked)
