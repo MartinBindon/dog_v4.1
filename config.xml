@@ -7,10 +7,12 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>dogApp_build3</name>
+    <name>dogApp_build4.1</name>
 
     <description>
-        The beginnings of my dog application. Trying to get Google Maps and Geolocation working. 
+        The beginnings of my dog application.
+        Geoloaction and maps working.
+        Attempting to make localStorage work.
     </description>
 
     <author href="" email="">

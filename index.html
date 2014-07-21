@@ -24,7 +24,7 @@
   <link href="css/jquery.mobile-1.3.1.min.css" rel="stylesheet">
 
 </head>
-<body>
+<body onload="initialize()">
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <!-- ++++++++++++++++++++++   Home page ++++++++++++++++++++++ -->
@@ -49,17 +49,22 @@
               <img style="width: 288px; height: 200px" src="img/sp_a0054.jpg">
           </div>
 
-          <a data-role="button" data-theme="c" href="#addPet" onclick="createPet();">
-              Add new pet
-          </a>
 
-          <a data-role="button" href="#informationSummary">
-              Dog 1
-          </a>
+          
+            <a data-role="button" data-theme="c" href="#addPet" onclick="createPet();">
+                Add new pet
+            </a>
 
-          <a data-role="button" href="#informationSummary">
-              Dog 2
-          </a>
+            <div id="startPageButtonArea">
+            <!--<a data-role="button" href="#informationSummary">
+                Dog 1
+            </a>
+
+            <a data-role="button" href="#informationSummary">
+                Dog 2
+            </a>-->
+            </div>
+
 
       </div>
 
@@ -346,7 +351,7 @@
           </div>
 
 
-          <a data-role="button" href="#complete" onclick="createPet()">
+          <a data-role="button" href="#home" onclick="createPet()">
               Finish
           </a>
 
@@ -384,306 +389,8 @@
             </ul>
         </div>
     </div>
-  </div>
-  
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<!-- ++++++++++++++++++++++   add dog page 2 ++++++++++++++++++++++ -->
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  </div>  
 
-
-  <div data-role="page" data-control-title="Add pet 2 dog" id="addDog2">
-
-
-
-      <div data-theme="a" data-role="header">
-          <h3>
-              Dog - page 2/3
-          </h3>
-      </div>
-
-
-
-      <div data-role="content">
-          <div data-controltype="textblock">
-              <p>
-                  <b>
-                      Please enter the following information for
-                      <span style="color: rgb(255, 0, 0);" data-mce-style="color: #ff0000;">
-                          %petName
-                          <span style="color: rgb(0, 0, 0);">
-                              (dog)
-                          </span>
-                      </span>
-                      :
-                      <br>
-                  </b>
-              </p>
-          </div>
-          
-
-
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput4">
-                  Weight
-              </label>
-              <input name="" id="textinput4" placeholder="kg - optional" value="" type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput5">
-                  Registered veterinary practice
-              </label>
-              <input name="" id="textinput5" placeholder="name - optional" value=""
-              type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput6">
-                  Veterinary practice contact number
-              </label>
-              <input name="" id="textinput6" placeholder="phone no - optional" value=""
-              type="tel">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput7">
-                  out of hours contact number
-              </label>
-              <input name="" id="textinput7" placeholder="phone no - optional" value=""
-              type="tel">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput8">
-                  Insurance company providing cover
-              </label>
-              <input name="" id="textinput8" placeholder="name - optional" value=""
-              type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput9">
-                  Insurance company contact number
-              </label>
-              <input name="" id="textinput9" placeholder="Phone number - optional" value=""
-              type="tel">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput10">
-                  Insurance policy number
-              </label>
-              <input name="" id="textinput10" placeholder="policy no - optional" value=""
-              type="text">
-          </div>
-          <a data-role="button" href="#addDog3">
-              Next
-          </a>
-      </div>
-
-
-
-      <div data-role="tabbar" data-iconpos="top" data-theme="a">
-          <ul>
-              <li>
-                  <a href="#home" data-transition="fade" data-theme="" data-icon="home">
-                      Home
-                  </a>
-              </li>
-              <li>
-                  <a href="#selectPet" data-transition="fade" data-theme="" data-icon="star">
-                      Select Pet
-                  </a>
-              </li>
-              <li>
-                  <a href="#findButtons" data-transition="fade" data-theme="" data-icon="info">
-                      Find
-                  </a>
-              </li>
-              <li>
-                  <a href="#about" data-transition="fade" data-theme="" data-icon="alert">
-                      About
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </div>
-
-  
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<!-- ++++++++++++++++++++++   add dog page 3 ++++++++++++++++++++++ -->
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-
-  <div data-role="page" data-control-title="Add pet 3 dog" id="addDog3">
-
-
-
-      <div data-theme="a" data-role="header">
-          <h3>
-              Dog - 3/3
-          </h3>
-      </div>
-
-
-
-      <div data-role="content">
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput16">
-                  Age
-              </label>
-              <input name="" id="textinput16" placeholder="years - optional" value=""
-              type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput15">
-                  Weight
-              </label>
-              <input name="" id="textinput15" placeholder="kg - optional" value="" type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput17">
-                  Flea treatment due
-              </label>
-              <input name="" id="textinput17" placeholder="date - optional" value=""
-              type="date">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput18">
-                  Worming treatment due
-              </label>
-              <input name="" id="textinput18" placeholder="date - optional" value=""
-              type="date">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput19">
-                  Innoculations due
-              </label>
-              <input name="" id="textinput19" placeholder="date - optional" value=""
-              type="text">
-          </div>
-          <a data-role="button" href="#complete">
-              Finish
-          </a>
-      </div>
-
-
-
-      <div data-role="tabbar" data-iconpos="top" data-theme="a">
-          <ul>
-              <li>
-                  <a href="#home" data-transition="fade" data-theme="" data-icon="home">
-                      Home
-                  </a>
-              </li>
-              <li>
-                  <a href="#selectPet" data-transition="fade" data-theme="" data-icon="star">
-                      Select Pet
-                  </a>
-              </li>
-              <li>
-                  <a href="#findButtons" data-transition="fade" data-theme="" data-icon="info">
-                      Find
-                  </a>
-              </li>
-              <li>
-                  <a href="#about" data-transition="fade" data-theme="" data-icon="alert">
-                      About
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </div>
-
-  
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<!-- ++++++++++++++++++++++   Add cat page 2 ++++++++++++++++++++++ -->
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-
-
-  <div data-role="page" data-control-title="Add pet 2 cat" id="addCat2">
-
-
-
-      <div data-theme="a" data-role="header">
-          <h3>
-              Cat
-          </h3>
-      </div>
-
-
-
-      <div data-role="content">
-          <div data-controltype="textblock">
-              <p>
-                  <b>
-                      Please enter the following information for
-                      <span style="color: rgb(255, 0, 0);" data-mce-style="color: #ff0000;">
-                          %petName
-                      </span>
-                      (Cat):
-                      <br>
-                  </b>
-              </p>
-          </div>
-
-
-
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput11">
-                  weight
-              </label>
-              <input name="" id="textinput11" placeholder="kg - optional" value="" type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput12">
-                  Registered veterinary practice
-              </label>
-              <input name="" id="textinput12" placeholder="name - optional" value=""
-              type="text">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput13">
-                  Veterinary contact number
-              </label>
-              <input name="" id="textinput13" placeholder="phone number - optional"
-              value="" type="tel">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput14">
-                  Veterinary out of hours contact number
-              </label>
-              <input name="" id="textinput14" placeholder="phone number - optional"
-              value="" type="tel">
-          </div>
-          <div data-controltype="textblock">
-              <p>
-                  <br>
-              </p>
-          </div>
-      </div>
-
-
-
-      <div data-role="tabbar" data-iconpos="top" data-theme="a">
-          <ul>
-              <li>
-                  <a href="#home" data-transition="fade" data-theme="" data-icon="home">
-                      Home
-                  </a>
-              </li>
-              <li>
-                  <a href="#selectPet" data-transition="fade" data-theme="" data-icon="star">
-                      Select Pet
-                  </a>
-              </li>
-              <li>
-                  <a href="#findButtons" data-transition="fade" data-theme="" data-icon="info">
-                      Find
-                  </a>
-              </li>
-              <li>
-                  <a href="#about" data-transition="fade" data-theme="" data-icon="alert">
-                      About
-                  </a>
-              </li>
-          </ul>
-      </div>
-  </div>
 
   
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
