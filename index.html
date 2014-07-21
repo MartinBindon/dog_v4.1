@@ -12,6 +12,7 @@
   <script src="js/jquery.mobile-1.3.1.min.js"></script>
   <script src="js/codiqa.ext.min.js"></script>
   <script src="js/geolocationAndMap.js"></script>
+  <script src="js/localStorage.js"></script>
   <!-- loads google maps API, sensor = true enables HTML5 geolocation tools -->
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp
   key=AIzaSyAW5rR3uLv0XhTYrca4KkoGL-_tyO16gvY&amp;sensor=true">  
@@ -48,7 +49,7 @@
               <img style="width: 288px; height: 200px" src="img/sp_a0054.jpg">
           </div>
 
-          <a data-role="button" data-theme="c" href="#addPet">
+          <a data-role="button" data-theme="c" href="#addPet" onclick="createPet();">
               Add new pet
           </a>
 
@@ -206,13 +207,19 @@
       <!-- text input field intended to open keyboard when touched. -->
       <div data-role="content">
 
+        <form id="addPetPage1">
+
           <div data-role="fieldcontain" data-controltype="textinput">
               <label for="textinput1">
                   Name of pet
-              </label>
+              </label>              
 
               <!-- when the text input has changed and focus moves away from it we update the local storage entry for this field. -->
-              <input onchange="addPetName(this)" name="addPetName" id="textinput1" placeholder="" value="" type="text">
+
+              <!-- needed to change the input name as this was conflicting with the name of the javaScript function -->
+              <input name="addPetNameHere" id="textinput1" placeholder="" value="" type="text" >  <!-- removed onchange="addPetName(this.value)" from the end. Changinging update of storage to continue button. -->
+              
+
           </div>
 
 
@@ -245,10 +252,12 @@
 
 
 
-          <a data-role="button" href="#addDog2" data-icon="plus" data-iconpos="left">
+          <a data-role="button" href="#addDog2" data-icon="plus" data-iconpos="left" onclick="createPet()">
               Continue
           </a>
       </div>
+
+      </form>
 
 
 
@@ -603,7 +612,7 @@
           <div style=" text-align:center" data-controltype="image">
               <img style="width: 144px; height: 100px" src="img/sp_a0054.jpg">
           </div>
-          <a data-role="button" href="#informationSummary" data-icon="info" data-iconpos="left">
+          <a data-role="button" href="#informationSummary" data-icon="info" data-iconpos="left" onclick="getPet()">
               Dog 1
           </a>
           <div style=" text-align:center" data-controltype="image">
@@ -691,14 +700,14 @@
 
                 <section id="pet_age">
                   Age:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="pet_age_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
 
                 <section id="pet_weight">
                   Weight:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="pet_weight_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
@@ -715,21 +724,21 @@
 
                 <section id="vet_name">
                   Registered Vet:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="vet_name_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
 
                 <section id="vet_number">
                   Phone number:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="vet_number_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
 
                 <section id="vet_oohcontact">
                   Out of hours contact:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="vet_oohcontact_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
@@ -738,21 +747,21 @@
 
                 <section id="tmt_flea">
                   Flea treatment due:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="tmt_flea_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
 
                 <section id="tmt_worm">
                   Worming treatment due:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="tmt_worm_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
 
                 <section id="tmt_jab">
                   Innoculations due:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="tmt_jab_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
@@ -769,21 +778,21 @@
 
                 <section id="ins_name">
                   Name:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="ins_name_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
 
                 <section id="ins_policyNo">
                   Policy number:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="ins_policyNo_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
 
                 <section id="ins_contact">
                   Contact number:
-                  <div id="pet_breed_value" style="float: right; text-align: left;">
+                  <div id="ins_contact_value" style="float: right; text-align: left;">
                     Lurcher
                   </div>
                 </section>
